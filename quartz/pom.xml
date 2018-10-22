@@ -99,7 +99,9 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
-                    <imageName>${project.groupId}/${project.artifactId}</imageName>
+                    <imageName>${project.name}:${project.version}</imageName>
+                    <baseImage>java</baseImage>
+                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <imageTags>
                         <imageTag>${project.version}</imageTag>
                     </imageTags>
