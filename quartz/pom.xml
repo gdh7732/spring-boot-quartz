@@ -18,7 +18,6 @@
     </parent>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -100,7 +99,10 @@
                 <version>1.0.0</version>
                 <configuration>
                     <imageName>${project.name}:${project.version}</imageName>
+                    <imageName>${docker.repostory}/${docker.registry.name}/${project.artifactId}:${project.version}
+                    </imageName>
                     <baseImage>java</baseImage>
+                    <forceTags>true</forceTags>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <imageTags>
                         <imageTag>${project.version}</imageTag>
@@ -113,6 +115,9 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <serverId>docker-aliyun</serverId>
+                    <registryUrl>${docker.repostory}</registryUrl>
+                    <pushImage>false</pushImage>
                 </configuration>
             </plugin>
         </plugins>

@@ -44,7 +44,7 @@
         <junit.version>4.12</junit.version>
         <assertj.version>3.9.1</assertj.version>
         <swagger.version>2.6.1</swagger.version>
-        <docker.repository>registry.cn-hangzhou.aliyuncs.com</docker.repository>
+        <docker.repostory>registry.cn-hangzhou.aliyuncs.com</docker.repostory>
         <docker.registry.name>gdh7732</docker.registry.name>
     </properties>
 
