@@ -99,8 +99,7 @@
                 <version>1.0.0</version>
                 <configuration>
                     <imageName>${project.name}:${project.version}</imageName>
-                    <imageName>${docker.repostory}/${docker.registry.name}/${project.artifactId}:${project.version}
-                    </imageName>
+                    <!--<imageName>${docker.repostory}/${docker.registry.name}/${project.artifactId}:${project.version}</imageName>-->
                     <baseImage>java</baseImage>
                     <forceTags>true</forceTags>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
