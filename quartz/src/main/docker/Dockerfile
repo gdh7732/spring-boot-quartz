@@ -1,4 +1,4 @@
-FROM hello-world
+FROM java
 VOLUME /tmp
 ADD quartz-1.0-SNAPSHOT.jar app.jar
 RUN bash -c 'touch /app.jar'
