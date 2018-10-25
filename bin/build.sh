@@ -11,6 +11,6 @@ echo $BIN_DIR
 cp $BIN_DIR/quartz/target/*.jar $TARGET_DIR
 cp $BIN_DIR/quartz/src/main/docker/Dockerfile $TARGET_DIR
 cd $TARGET_DIR
-docker build -t ocean/$PROJECT_HOME:1.0-SNAPSHOT .
-docker push ocean/$PROJECT_HOME:1.0-SNAPSHOT
+docker build -t registry.cn-hangzhou.aliyuncs.com/gdh7732/ocean/$PROJECT_HOME:1.0-SNAPSHOT .
+docker push registry.cn-hangzhou.aliyuncs.com/gdh7732/ocean/$PROJECT_HOME:1.0-SNAPSHOT
 
