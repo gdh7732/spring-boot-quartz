@@ -19,7 +19,8 @@
     </parent>
 
     <modules>
-        <module>quartz</module>
+        <module>quartz-service</module>
+        <module>quartz-web</module>
         <module>common</module>
     </modules>
 
