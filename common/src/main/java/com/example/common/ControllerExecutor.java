@@ -14,14 +14,14 @@ public abstract class ControllerExecutor<R, T> {
         this.param = param;
     }
 
-    public abstract void checkParam(T... param) throws ServiceException;
+    public abstract void checkParam() throws ServiceException;
 
-    public abstract R executeService(T... param) throws ServiceException;
+    public abstract R executeService() throws ServiceException;
 
     public ResponseResult<R> execute(T... param) throws ServiceException {
         ResponseResult<R> result = new ResponseResult<>();
         try {
-            R r = executeService(param);
+            R r = executeService();
             if (r instanceof Boolean) {
                 Boolean b = (Boolean) r;
                 result.setSuccess(b);

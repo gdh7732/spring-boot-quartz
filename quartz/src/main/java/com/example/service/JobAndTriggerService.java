@@ -12,12 +12,14 @@ import java.util.Map;
  * @author guodahai
  */
 public interface JobAndTriggerService {
+
     /**
      * 分页查询定时任务
      *
      * @param pageNum
      * @param pageSize
      * @return
+     * @throws ServiceException
      */
     Map getJobAndTriggerDetails(int pageNum, int pageSize) throws ServiceException;
 
