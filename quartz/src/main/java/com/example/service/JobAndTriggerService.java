@@ -2,8 +2,8 @@ package com.example.service;
 
 
 import com.example.common.ServiceException;
-import com.example.entity.JobAndTrigger;
-import com.example.entity.TriggerRequest;
+import com.example.model.TriggerJobDO;
+import com.example.model.TriggerRequest;
 
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,7 @@ public interface JobAndTriggerService {
      * @return
      * @throws ServiceException
      */
-    List<JobAndTrigger> getAll() throws ServiceException;
+    List<TriggerJobDO> getAll() throws ServiceException;
 
     /**
      * 添加定时任务
@@ -45,7 +45,7 @@ public interface JobAndTriggerService {
      * @return
      * @throws ServiceException
      */
-    JobAndTrigger findOne(TriggerRequest request) throws ServiceException;
+    TriggerJobDO findOne(TriggerRequest request) throws ServiceException;
 
     /**
      * 修改定时任务
@@ -54,6 +54,6 @@ public interface JobAndTriggerService {
      * @return
      * @throws ServiceException
      */
-    Boolean update(JobAndTrigger trigger) throws ServiceException;
+    Boolean update(TriggerJobDO trigger) throws ServiceException;
 
 }

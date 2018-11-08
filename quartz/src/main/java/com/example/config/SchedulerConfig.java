@@ -1,6 +1,6 @@
-package com.example;
+package com.example.config;
 
-import com.example.entity.JobAndTrigger;
+import com.example.model.TriggerJobDO;
 import com.example.job.BaseJob;
 import com.example.service.JobAndTriggerService;
 import org.quartz.*;
@@ -60,20 +60,20 @@ public class SchedulerConfig {
     }
 
     public void startHelloJob(Scheduler scheduler) throws Exception {
-        List<JobAndTrigger> all = triggerService.getAll();
+        List<TriggerJobDO> all = triggerService.getAll();
         // 启动调度器
         scheduler.start();
-        for (JobAndTrigger jobAndTrigger : all) {
+        for (TriggerJobDO triggerJobDO : all) {
             //构建job信息
-            BaseJob baseJob = getClass(jobAndTrigger.getJobClassName());
-            JobDetail jobDetail = JobBuilder.newJob(baseJob.getClass()).withIdentity(jobAndTrigger.getJobClassName(), jobAndTrigger.getJobGroup()).build();
+            BaseJob baseJob = getClass(triggerJobDO.getJobClassName());
+            JobDetail jobDetail = JobBuilder.newJob(baseJob.getClass()).withIdentity(triggerJobDO.getJobClassName(), triggerJobDO.getJobGroup()).build();
 
             //表达式调度构建器(即任务执行的时间)
-            String cronExpression = jobAndTrigger.getCronExpression();
+            String cronExpression = triggerJobDO.getCronExpression();
             CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(cronExpression);
 
             //按新的cronExpression表达式构建一个新的trigger
-            CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity(jobAndTrigger.getJobClassName(), jobAndTrigger.getTriggerGroup())
+            CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerJobDO.getJobClassName(), triggerJobDO.getTriggerGroup())
                     .withSchedule(scheduleBuilder).build();
             scheduler.scheduleJob(jobDetail, trigger);
         }

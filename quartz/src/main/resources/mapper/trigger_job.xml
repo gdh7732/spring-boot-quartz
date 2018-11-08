@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.TriggerMapper">
+
+    <resultMap id="result" type="com.example.model.TriggerJobDO">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="jobName" column="job_name" jdbcType="VARCHAR"/>
+        <result property="jobGroup" column="job_group" jdbcType="VARCHAR"/>
+        <result property="jobClassName" column="job_class_name" jdbcType="VARCHAR"/>
+        <result property="triggerName" column="trigger_name" jdbcType="VARCHAR"/>
+        <result property="triggerGroup" column="trigger_group" jdbcType="VARCHAR"/>
+        <result property="isDelete" column="is_delete" jdbcType="INTEGER"/>
+        <result property="isPause" column="is_pause" jdbcType="INTEGER"/>
+        <result property="cronExpression" column="cron_expression" jdbcType="VARCHAR"/>
+        <result property="timeZoneId" column="time_zone_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="baseSelectSql">
+        id, job_name, job_group, job_class_name, trigger_name, trigger_group, is_delete, is_pause, cron_expression, time_zone_id
+    </sql>
+
+    <update id="update">
+
+    </update>
+
+    <insert id="insert">
+        INSERT INTO tb_trigger_job
+        (job_name, job_group, job_class_name, trigger_name, trigger_group, is_delete, is_pause, cron_expression, time_zone_id)
+        VALUES (#{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR}, #{jobClassName,jdbcType=VARCHAR},
+                #{triggerName,jdbcType=VARCHAR}, #{triggerGroup,jdbcType=VARCHAR},
+                0, 0,
+                #{cronExpression,jdbcType=VARCHAR}, #{timeZoneId,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <!--根据ID查询信息-->
+    <select id="queryById" resultMap="result">
+        SELECT
+        <include refid="baseSelectSql"/>
+        FROM tb_trigger_job where id = #{id, jdbcType=INTEGER} limit 1
+    </select>
+
+    <select id="queryByParam" resultMap="result">
+
+    </select>
+
+</mapper>

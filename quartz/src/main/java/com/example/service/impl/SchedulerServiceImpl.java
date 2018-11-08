@@ -2,8 +2,8 @@ package com.example.service.impl;
 
 import com.example.common.ErrorCodeEnum;
 import com.example.common.ServiceException;
-import com.example.entity.JobAndTrigger;
-import com.example.entity.TriggerRequest;
+import com.example.model.TriggerJobDO;
+import com.example.model.TriggerRequest;
 import com.example.job.BaseJob;
 import com.example.service.JobAndTriggerService;
 import com.example.service.SchedulerService;
@@ -67,7 +67,7 @@ public class SchedulerServiceImpl implements SchedulerService {
             logger.error("暂停定时任务失败,trigger:{}", request.toString());
             throw new ServiceException(ErrorCodeEnum.QUA01);
         }
-        JobAndTrigger trigger = triggerService.findOne(request);
+        TriggerJobDO trigger = triggerService.findOne(request);
         trigger.setIsPause(BigInteger.ONE);
         return triggerService.update(trigger);
     }
@@ -82,7 +82,7 @@ public class SchedulerServiceImpl implements SchedulerService {
             logger.error("恢复定时任务失败,trigger:{}", request.toString());
             throw new ServiceException(ErrorCodeEnum.QUA01);
         }
-        JobAndTrigger trigger = triggerService.findOne(request);
+        TriggerJobDO trigger = triggerService.findOne(request);
         trigger.setIsPause(BigInteger.ZERO);
         return triggerService.update(trigger);
     }
@@ -105,7 +105,7 @@ public class SchedulerServiceImpl implements SchedulerService {
             logger.error("更新定时任务失败,trigger:{}", request.toString());
             throw new ServiceException(ErrorCodeEnum.QUA01);
         }
-        JobAndTrigger trigger = triggerService.findOne(request);
+        TriggerJobDO trigger = triggerService.findOne(request);
         BeanUtils.copyProperties(request, trigger);
         return triggerService.update(trigger);
     }
@@ -122,7 +122,7 @@ public class SchedulerServiceImpl implements SchedulerService {
             logger.error("删除定时任务失败,trigger:{}", request.toString());
             throw new ServiceException(ErrorCodeEnum.QUA01);
         }
-        JobAndTrigger trigger = triggerService.findOne(request);
+        TriggerJobDO trigger = triggerService.findOne(request);
         trigger.setIsDelete(BigInteger.ONE);
         return triggerService.update(trigger);
     }

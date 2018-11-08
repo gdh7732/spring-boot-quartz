@@ -3,7 +3,7 @@ package com.example.controller;
 import com.example.common.ControllerExecutor;
 import com.example.common.ResponseResult;
 import com.example.common.ServiceException;
-import com.example.entity.TriggerRequest;
+import com.example.model.TriggerRequest;
 import com.example.service.JobAndTriggerService;
 import com.example.service.SchedulerService;
 import io.swagger.annotations.Api;

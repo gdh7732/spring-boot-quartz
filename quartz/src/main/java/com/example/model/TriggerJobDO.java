@@ -1,65 +1,51 @@
-package com.example.entity;
+package com.example.model;
 
-import javax.persistence.*;
 import java.math.BigInteger;
 
 /**
  * @author guodahai
  */
-@Entity
-@Table(name = "job_trigger")
-public class JobAndTrigger {
+public class TriggerJobDO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     /**
      * 任务名称
      */
-    @Column(name = "job_name")
     private String jobName;
     /**
      * 任务所在组
      */
-    @Column(name = "job_group")
     private String jobGroup;
     /**
      * 任务类名
      */
-    @Column(name = "job_classname")
     private String jobClassName;
     /**
      * 触发器名称
      */
-    @Column(name = "trigger_name")
     private String triggerName;
     /**
      * 触发器所在组
      */
-    @Column(name = "trigger_group")
     private String triggerGroup;
     /**
      * 是否删除0：否，1：是
      */
-    @Column(name = "is_delete")
     private BigInteger isDelete;
     /**
      * 是否暂停0：否，1：是
      */
-    @Column(name = "is_pause")
     private BigInteger isPause;
     /**
      * 表达式
      */
-    @Column(name = "cron_expression")
     private String cronExpression;
     /**
      * 时区
      */
-    @Column(name = "time_zone_id")
     private String timeZoneId;
 
-    public JobAndTrigger() {
+    public TriggerJobDO() {
     }
 
 
@@ -145,17 +131,6 @@ public class JobAndTrigger {
 
     @Override
     public String toString() {
-        return "JobAndTrigger{" +
-                "id=" + id +
-                ", jobName='" + jobName + '\'' +
-                ", jobGroup='" + jobGroup + '\'' +
-                ", jobClassName='" + jobClassName + '\'' +
-                ", triggerName='" + triggerName + '\'' +
-                ", triggerGroup='" + triggerGroup + '\'' +
-                ", isDelete=" + isDelete +
-                ", isPause=" + isPause +
-                ", cronExpression='" + cronExpression + '\'' +
-                ", timeZoneId='" + timeZoneId + '\'' +
-                '}';
+        return super.toString();
     }
 }

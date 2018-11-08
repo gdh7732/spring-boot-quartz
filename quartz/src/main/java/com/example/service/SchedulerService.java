@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.common.ServiceException;
-import com.example.entity.TriggerRequest;
+import com.example.model.TriggerRequest;
 
 /**
  * @author guodahai
