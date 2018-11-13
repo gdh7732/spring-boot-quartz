@@ -37,6 +37,11 @@
             <artifactId>common</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.ocean</groupId>
+            <artifactId>quartz-api</artifactId>
+        </dependency>
+
         <!--spring-boot-starter-dubbo-->
         <dependency>
             <groupId>com.alibaba.boot</groupId>

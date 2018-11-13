@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.dao.TriggerMapper">
+<mapper namespace="com.ocean.mapper.TriggerMapper">
 
-    <resultMap id="result" type="com.example.model.TriggerJobDO">
+    <resultMap id="result" type="com.ocean.model.TriggerJobDO">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="jobName" column="job_name" jdbcType="VARCHAR"/>
         <result property="jobGroup" column="job_group" jdbcType="VARCHAR"/>
