@@ -11,7 +11,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.ocean.job.BaseJob;
 import com.ocean.manager.SchedulerManager;
 import com.ocean.manager.TriggerJobManager;
 import com.ocean.model.TriggerJobDO;

@@ -1,8 +1,8 @@
 package com.ocean.config;
 
 import com.ocean.model.TriggerJobDO;
-import com.ocean.job.BaseJob;
 import com.ocean.manager.TriggerJobManager;
+
 import org.quartz.*;
 import org.quartz.ee.servlet.QuartzInitializerListener;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
@@ -18,6 +18,8 @@ import java.util.Properties;
 import javax.annotation.Resource;
 
 /**
+ * 定时任务配置
+ *
  * @author guodahai
  */
 @Configuration
@@ -60,7 +62,7 @@ public class SchedulerConfig {
         return scheduler;
     }
 
-    public void startHelloJob(Scheduler scheduler) throws Exception {
+    private void startHelloJob(Scheduler scheduler) throws Exception {
         List<TriggerJobDO> all = triggerService.getAll();
         // 启动调度器
         scheduler.start();
@@ -80,7 +82,7 @@ public class SchedulerConfig {
         }
     }
 
-    public static BaseJob getClass(String classname) throws Exception {
+    private static BaseJob getClass(String classname) throws Exception {
         Class<?> clazz = Class.forName(classname);
         return (BaseJob) clazz.newInstance();
     }

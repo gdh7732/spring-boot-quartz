@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 定时任务管理manager
+ *
  * @author guodahai
  */
 public interface TriggerJobManager {

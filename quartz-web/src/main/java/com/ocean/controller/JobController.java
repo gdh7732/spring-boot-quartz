@@ -83,7 +83,7 @@ public class JobController {
 
 
     @PostMapping(value = "/reschedule")
-    public ResponseResult<Boolean> reschedule(TriggerRequest request) throws Exception {
+    public ResponseResult<Boolean> reschedule(TriggerRequest request) {
         return new ControllerExecutor<Boolean, TriggerRequest>(request) {
 
             @Override
@@ -99,7 +99,7 @@ public class JobController {
 
 
     @PostMapping(value = "/delete")
-    public ResponseResult<Boolean> delete(TriggerRequest request) throws Exception {
+    public ResponseResult<Boolean> delete(TriggerRequest request) {
         return new ControllerExecutor<Boolean, TriggerRequest>(request) {
             @Override
             public void checkParam() throws ServiceException {
@@ -114,7 +114,7 @@ public class JobController {
 
 
     @GetMapping(value = "/query")
-    public ResponseResult<Map> query(@RequestParam("pageNum") Integer pageNum, @RequestParam("pageSize") Integer pageSize) throws Exception {
+    public ResponseResult<Map> query(@RequestParam("pageNum") Integer pageNum, @RequestParam("pageSize") Integer pageSize) {
         return new ControllerExecutor<Map, Integer>(pageNum, pageSize) {
             @Override
             public void checkParam() throws ServiceException {

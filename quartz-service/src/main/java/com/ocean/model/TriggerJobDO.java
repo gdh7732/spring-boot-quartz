@@ -3,6 +3,8 @@ package com.ocean.model;
 import java.math.BigInteger;
 
 /**
+ * 定时任务DO
+ *
  * @author guodahai
  */
 public class TriggerJobDO {

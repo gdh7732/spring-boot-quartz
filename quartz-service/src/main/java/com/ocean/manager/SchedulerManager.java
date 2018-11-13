@@ -4,6 +4,8 @@ import com.ocean.ServiceException;
 import com.ocean.request.TriggerRequest;
 
 /**
+ * 任务操作manager
+ *
  * @author guodahai
  * @version 2018/4/16 下午5:25
  */
