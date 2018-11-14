@@ -128,10 +128,10 @@ public class SchedulerManagerImpl implements SchedulerManager {
         return triggerJobManager.update(trigger);
     }
 
-    private static BaseJob getClass(String classname) throws ServiceException {
+    private static Job getClass(String classname) throws ServiceException {
         try {
             Class<?> clazz = Class.forName(classname);
-            return (BaseJob) clazz.newInstance();
+            return (Job) clazz.newInstance();
         } catch (Exception e) {
             throw new ServiceException(ErrorCodeEnum.P99);
         }

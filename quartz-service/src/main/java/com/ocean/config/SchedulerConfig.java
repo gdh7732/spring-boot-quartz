@@ -68,7 +68,7 @@ public class SchedulerConfig {
         scheduler.start();
         for (TriggerJobDO triggerJobDO : all) {
             //构建job信息
-            BaseJob baseJob = getClass(triggerJobDO.getJobClassName());
+            Job baseJob = getClass(triggerJobDO.getJobClassName());
             JobDetail jobDetail = JobBuilder.newJob(baseJob.getClass()).withIdentity(triggerJobDO.getJobClassName(), triggerJobDO.getJobGroup()).build();
 
             //表达式调度构建器(即任务执行的时间)
@@ -82,9 +82,9 @@ public class SchedulerConfig {
         }
     }
 
-    private static BaseJob getClass(String classname) throws Exception {
+    private static Job getClass(String classname) throws Exception {
         Class<?> clazz = Class.forName(classname);
-        return (BaseJob) clazz.newInstance();
+        return (Job) clazz.newInstance();
     }
 
 }
