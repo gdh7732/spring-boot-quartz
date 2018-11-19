@@ -1,10 +1,13 @@
 package com.ocean.request;
 
+import java.io.Serializable;
+
 /**
  * @author guodahai
  * @version 2018/4/16 下午5:37
  */
-public class TriggerRequest {
+public class TriggerRequest implements Serializable {
+    private static final long serialVersionUID = -1810995936449414747L;
     /**
      * job类名
      */

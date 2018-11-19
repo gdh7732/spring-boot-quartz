@@ -1,5 +1,6 @@
 package com.ocean.model;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
@@ -7,7 +8,9 @@ import java.math.BigInteger;
  *
  * @author guodahai
  */
-public class TriggerJobDO {
+public class TriggerJobDO implements Serializable {
+
+    private static final long serialVersionUID = -8431994219147624858L;
 
     private Long id;
     /**

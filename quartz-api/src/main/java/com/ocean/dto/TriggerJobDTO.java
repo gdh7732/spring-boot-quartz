@@ -1,12 +1,14 @@
 package com.ocean.dto;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
  * @author guodahai
  */
-public class TriggerJobDTO {
+public class TriggerJobDTO implements Serializable {
 
+    private static final long serialVersionUID = -1691527400792106382L;
     private Long id;
     /**
      * 任务名称

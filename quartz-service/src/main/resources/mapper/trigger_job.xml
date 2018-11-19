@@ -81,7 +81,7 @@
                 AND job_name = #{jobName,jdbcType=VARCHAR}
             </if>
             <if test="jobGroup != null  and jobGroup != ''">
-                AND job_name = #{jobGroup,jdbcType=VARCHAR}
+                AND job_group = #{jobGroup,jdbcType=VARCHAR}
             </if>
             <if test="jobClassName != null  and jobClassName != ''">
                 AND job_class_name = #{jobClassName,jdbcType=VARCHAR}
